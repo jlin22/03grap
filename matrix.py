@@ -2,8 +2,15 @@ import math
 
 
 def print_matrix( matrix ):
-    pass
+	a = ""
+	for c in matrix:
+		for i in range(len(c)):
+			a += str((c[i])) + " "
+			if (i == len(c) - 1):
+				a += "\n"
+	print(a)
 
+    
 def ident( matrix ):
     pass
 
@@ -21,3 +28,7 @@ def new_matrix(rows = 4, cols = 4):
         for r in range( rows ):
             m[c].append( 0 )
     return m
+
+#testing
+m = new_matrix()
+print_matrix(m)
