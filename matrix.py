@@ -9,12 +9,21 @@ def print_matrix( matrix ):
 			if (i == len(c) - 1):
 				a += "\n"
 	print(a)
+ 
+#m1 * m2 -> m2   
+def ident( matrix ):
+	for c in range(len(matrix)):
+		for r in range(len(matrix[c])):
+			if c == r :
+				matrix[c][r] = 1
+			else:
+				matrix[c][r] = 0
+	return matrix
 
     
-def ident( matrix ):
-    pass
 
-#m1 * m2 -> m2
+
+
 def matrix_mult( m1, m2 ):
     pass
 
@@ -31,4 +40,5 @@ def new_matrix(rows = 4, cols = 4):
 
 #testing
 m = new_matrix()
+m = ident(m)
 print_matrix(m)
