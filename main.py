@@ -16,14 +16,23 @@ m3 = matrix_mult(m1, m2)
 print("product of identity and zero")
 print_matrix(m3)	
 
-edge = new_matrix(rows=4, cols=4)
-print("add points (500,500,0) and (0,0,0)")
-add_point(edge, 500, 500, 0)
-add_point(edge, 0, 0, 0)
-print_matrix(edge)
-print("add edge (250,0,0), (250,500,0)")
-add_edge(edge, 250, 0, 0, 250, 500, 0)
-print_matrix(edge)
-draw_lines(edge, screen, color )
-save_ppm(screen, "image.ppm")
-#display(screen)
+matrix = new_matrix(rows=4, cols=4)
+add_edge(matrix, 240, 40, 0, 260, 40, 0)
+add_edge(matrix, 240, 40, 0, 240, 250, 0)
+add_edge(matrix, 260, 40, 0, 260, 250, 0)
+add_edge(matrix, 215, 250, 0, 285, 250, 0)
+add_edge(matrix, 215, 250, 0, 215, 350, 0)
+add_edge(matrix, 285, 250, 0, 285, 350, 0)
+i = 10
+while 215 + i < 285:
+	add_edge(matrix, 215+i, 260, 0, 215+i, 350, 0)
+	i+= 10
+i = 0
+while 215 + i < 265:
+	add_edge(matrix, 215+i, 350, 0, 225+i, 350, 0)
+	add_edge(matrix, 225+i, 260, 0, 235+i, 260, 0)
+	i+=20
+add_edge(matrix, 275, 350, 0, 285, 350, 0)
+
+draw_lines(matrix, screen, color )
+display(screen)
